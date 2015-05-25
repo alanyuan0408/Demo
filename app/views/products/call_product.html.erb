@@ -1,7 +1,7 @@
 <div ng-app="myApp"  ng-init="">
 
 	<div ng-controller="myCtrl">
-		<button ng-click="product_json()">Greet</button>
+		<button ng-click="product_json()">Get JSON</button>
 
 		<div>
 			<div ng-repeat="product in products">
@@ -11,7 +11,7 @@
 		</div>
 
 		<br>
-		<button ng-click="product_html()">Greet</button>
+		<button ng-click="product_html()">Get HTML</button>
 
 		<div ng-bind-html="getHtml(expression)"></div>
 
@@ -28,12 +28,11 @@
 
 	    $scope.product_json = function(){
 	    	var httpRequest = $http({
-            method: 'POST',
-            url: '/request_product.json',
-            dataType: "JSON",
-        	headers: {
-          		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        	}
+                method: 'POST',
+                url: '/request_product.json',
+            	headers: {
+              		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            	}
 
         	}).success(function(data, status) {
             	$scope.products = data;
@@ -44,7 +43,6 @@
 	    	var httpRequest = $http({
             method: 'POST',
             url: '/request_product.html',
-            dataType: "JSON",
         	headers: {
           		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
         	}
