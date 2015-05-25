@@ -28,12 +28,11 @@
 
 	    $scope.product_json = function(){
 	    	var httpRequest = $http({
-            method: 'POST',
-            url: '/request_product.json',
-            dataType: "JSON",
-        	headers: {
-          		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        	}
+                method: 'POST',
+                url: '/request_product.json',
+            	headers: {
+              		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            	}
 
         	}).success(function(data, status) {
             	$scope.products = data;
@@ -42,13 +41,12 @@
 
 	    $scope.product_html = function(){
 	    	var httpRequest = $http({
-            method: 'POST',
-            url: '/request_product.html',
-            dataType: "JSON",
-        	headers: {
-          		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        	}
-
+                method: 'POST',
+                url: '/request_product.html',
+            	headers: {
+              		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            	}
+                
         	}).success(function(data, status) {
             	$scope.getHtml = function(html){
         			return $sce.trustAsHtml(html);

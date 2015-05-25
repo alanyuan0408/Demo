@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
 	end
 
-	def requrest_product
+	def request_product
 
 	end
 end
