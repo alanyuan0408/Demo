@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 				render :partial => "products/partial/list_partial"
 			}
 			format.json {
-				puts @products
+
 				render :json => @products
 			}
 		end
