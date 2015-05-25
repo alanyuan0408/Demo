@@ -1,7 +1,7 @@
 <div ng-app="myApp"  ng-init="">
 
 	<div ng-controller="myCtrl">
-		<button ng-click="product_json()">Greet</button>
+		<button ng-click="product_json()">Get JSON</button>
 
 		<div>
 			<div ng-repeat="product in products">
@@ -11,7 +11,7 @@
 		</div>
 
 		<br>
-		<button ng-click="product_html()">Greet</button>
+		<button ng-click="product_html()">Get HTML</button>
 
 		<div ng-bind-html="getHtml(expression)"></div>
 
