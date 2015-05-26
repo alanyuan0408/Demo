@@ -9,22 +9,23 @@ controllerFunction = ($scope, $http, $sce) ->
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
             }
-            success: (data, status) ->
+            success: (data) ->
                 $scope.products = data
+                $scope.$apply()
 
 
     $scope.product_html = ->
         $.ajax
             method: 'POST',
-            url: '/request_product.json',  
+            url: '/request_product.html',  
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
             }
-            success: (data, status) ->
+            success: (data) ->
                 $scope.getHtml = (html)->
                     return $sce.trustAsHtml(html)
-
                 $scope.expression = data
+                $scope.$apply()     
 
 
 filterFunction = ($sce)->
