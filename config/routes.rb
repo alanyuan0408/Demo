@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'products#call_product'
 
-  post '/request_product', to: 'products#requrest_product'
+  post '/request_product', to: 'products#request_product'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

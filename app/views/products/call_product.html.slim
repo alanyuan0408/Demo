@@ -1,25 +1,21 @@
-<div ng-app="myApp"  ng-init="">
+div ng-app="myApp"  ng-init=""
 
-	<div ng-controller="myCtrl">
-		<button ng-click="product_json()">Get JSON</button>
+	div ng-controller="myCtrl"
+		button ng-click="product_json()" Get JSON
 
-		<div>
-			<div ng-repeat="product in products">
-        		<h4>{{product.name}}</h4>
-        		<p><b>Price:</b>{{product.price}}</p>
-    		</div>
-		</div>
+		div
+			div ng-repeat="product in products"
+        		h4 
+                    |{{ product.name }}
+        		p
+                    b Price:
+                    |{{ product.price }}
 
-		<br>
-		<button ng-click="product_html()">Get HTML</button>
+		br
+		button ng-click="product_html()" Get HTML
+        div ng-bind-html="expression | html"
 
-		<div ng-bind-html="getHtml(expression)"></div>
-
-	</div>
-
-</div>
-
-<script>
+javascript:
 	var app = angular.module('myApp', []);
 	app.controller('myCtrl', function($scope, $http, $sce) {
 
@@ -59,4 +55,8 @@
 
 	});
 
-</script>
+	app.filter('html', function($sce) {
+    	return function(val) {
+        	return $sce.trustAsHtml(val);
+    	};
+	});
