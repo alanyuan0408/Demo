@@ -41,11 +41,11 @@
 
 	    $scope.product_html = function(){
 	    	var httpRequest = $http({
-            method: 'POST',
-            url: '/request_product.html',
-        	headers: {
-          		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        	}
+                method: 'POST',
+                url: '/request_product.html',
+            	headers: {
+              		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            	}
 
         	}).success(function(data, status) {
             	$scope.getHtml = function(html){
@@ -59,9 +59,4 @@
 
 	});
 
-	app.filter('html', function($sce) {
-    	return function(val) {
-        	return $sce.trustAsHtml(val);
-    	};
-	});
 </script>
