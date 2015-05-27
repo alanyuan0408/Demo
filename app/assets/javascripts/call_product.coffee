@@ -1,4 +1,4 @@
-controllerFunction = ($scope, $http, $sce) ->
+controllerFunction = ($scope, $http) ->
     $scope.products = []
     $scope.expression = ''
 
