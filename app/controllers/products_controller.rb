@@ -8,8 +8,4 @@ class ProductsController < ApplicationController
 
 	end
 
-	def directive
-
-	end
-
 end
