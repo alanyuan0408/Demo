@@ -1,6 +1,7 @@
 controllerFunction = ($scope, $http) ->
     $scope.products = []
     $scope.expression = ''
+    $scope.name = "Alany"
 
     $scope.product_json = ->
         $.ajax
@@ -33,8 +34,15 @@ filterFunction = ($sce)->
         return $sce.trustAsHtml(val)
 
 
+directive = ->
+    return {
+        templateUrl: 'template.html' 
+    }
+
+
 angular
-    .module('myApp', [])
+    .module("<%= module_name %>", ['templates'])
     .controller('myCtrl', controllerFunction)
 	.filter('html', filterFunction)
+    .directive('myCustomer', directive)
     	
