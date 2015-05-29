@@ -1,6 +1,9 @@
 div ng-app="myApp"  ng-init=""
 
 	div ng-controller="myCtrl"
+
+        h4 Example #1: Respond Request using JSON
+        p The frontend sends a request for the list of products in the form of a JSON object
 		button ng-click="product_json()" Get JSON
 
 		div
@@ -12,5 +15,19 @@ div ng-app="myApp"  ng-init=""
                     |{{ product.price }}
 
 		br
+        h4 Example #2: Respond Request using HTML Partial
+        p The frontend sends a request for a list of products pre-rendered on an HTML partial
 		button ng-click="product_html()" Get HTML
         div ng-bind-html="expression | html"
+
+        br
+        h4 Example #3: Harder AJAX Example
+        p The frontend sends a request for the sum of the price of a product's sub_products
+        button ng-click="sum_product()" Get Sum
+        br
+        br
+        input ng-model="input" 
+        p 
+            |{{ return_sum }}
+        p
+            |{{ total_error }}

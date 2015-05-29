@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'products#call_product'
 
   post '/request_product', to: 'products#request_product'
-  get '/directives', to: 'products#directive'
+  post '/request_sum', to: 'products#request_sum'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
