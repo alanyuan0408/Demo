@@ -15,5 +15,4 @@
 //= require turbolinks
 //= require angular
 //= require call_product
-//= require call_directive
 //= require_tree .
