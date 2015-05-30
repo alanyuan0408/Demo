@@ -36,7 +36,7 @@ filterFunction = ($sce)->
 
 directive = ->
     return {
-        templateUrl: 'template.html' 
+        templateUrl: 'name.html' 
     }
 
 
