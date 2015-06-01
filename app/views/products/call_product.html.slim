@@ -31,3 +31,13 @@ div ng-app="myApp"  ng-init=""
             |{{ return_sum }}
         p
             |{{ total_error }}
+
+        br
+        h4 Example #4: Get User Follower Association
+        p The frontend sends a request for the list of users the input user is following.
+        button ng-click="get_followers()" Get Followers
+        br
+        br
+        input ng-model="user"
+        div ng-bind-html="follower_expression | html"
+

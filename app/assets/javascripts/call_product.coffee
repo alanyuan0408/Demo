@@ -3,7 +3,9 @@ controllerFunction = ($scope, $http) ->
     $scope.expression = ''
     $scope.return_sum = null
     $scope.input = ''
+    $scope.user = ''
     $scope.total_error = ''
+    $scope.follower_expression = ''
 
     $scope.product_json = ->
         $.ajax
@@ -30,6 +32,7 @@ controllerFunction = ($scope, $http) ->
                 $scope.expression = data
                 $scope.$apply()
 
+
     $scope.sum_product = ->
         request = {
             product_name: $scope.input
@@ -49,6 +52,26 @@ controllerFunction = ($scope, $http) ->
                 console.log(xhr)
                 $scope.total_error = "The Product does not exist"
                 $scope.$apply()
+
+
+    $scope.get_followers = ->
+        request = {
+            request_user: $scope.user
+        }
+
+        $.ajax
+            method: 'POST',
+            url: '/get_followers.html',
+            data: request, 
+            headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            }
+            success: (data) ->
+                $scope.getHtml = (html)->
+                    return $sce.trustAsHtml(html)
+                $scope.follower_expression = data
+                $scope.$apply()
+
 
 
 filterFunction = ($sce)->
