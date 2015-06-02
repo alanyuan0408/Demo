@@ -31,3 +31,27 @@ peach = Product.find_by_name('Peach')
 peach.sub_products.create(name: "Sub_part1", price: 23)
 peach.sub_products.create(name: "Sub_part2", price: 33)
 peach.sub_products.create(name: "Sub_part3", price: 43)
+
+if !(User.exists?(name: 'Jerry'))
+	User.create(name: 'Jerry')
+end
+
+jerry = User.find_by_name('Jerry')
+jerry.followers.create(name: "Allan", following: "Jerry")
+jerry.followers.create(name: "Jackie", following: "Jerry")
+jerry.followers.create(name: "James", following: "Jerry")
+
+=begin
+if !(Follower.exists?(name: 'Allan'))
+	jerry = User.find_by_name('Jerry')
+	Follower.create(name: 'Allan', user_id: jerry.user_id)
+end
+
+if !(Follower.exists?(name: 'Jackie'))
+	Follower.create(name: 'Jackie', user_id: User.find_by_name('Jerry').user_id)
+end
+
+if !(Follower.exists?(name: 'James'))
+	Follower.create(name: 'James', user_id: User.find_by_name('Jerry').user_id)
+end
+=end

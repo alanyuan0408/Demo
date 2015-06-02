@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   post '/request_product', to: 'products#request_product'
   post '/request_sum', to: 'products#request_sum'
+  post '/get_followers', to: 'users#get_followers'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
